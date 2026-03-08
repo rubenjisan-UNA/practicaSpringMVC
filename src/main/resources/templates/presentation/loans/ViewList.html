@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prestamos</title>
+    <link rel="stylesheet" href="/css/ViewList.css" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <h1>Prestamos</h1>
+    </div>
+    <div class="body">
+        <a href="/presentation/loans/show" class="button">Crear Prestamo</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Monto</th>
+                    <th>Duracion</th>
+                    <th>Tasa de interes</th>
+            </thead>
+            <tbody>
+                <tr th:each="l : ${loans}">
+                    <td th:text="${l.id}"></td>
+                    <td th:text="${l.name}"></td>
+                    <td th:text="${l.type}"></td>
+                    <td th:text="${l.amount}"></td>
+                    <td th:text="${l.duration}">
+                    <td th:text="${l.interest}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <h1>Gracias por su preferencia...</h1>
+    </div>
+</body>
+</html>

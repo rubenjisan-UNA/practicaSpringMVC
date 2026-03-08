@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prestamo</title>
+    <link rel="stylesheet" href="/css/ViewEdit.css" type="text/css">
+</head>
+<body>
+
+<div class="header">
+    <h1>Prestamo</h1>
+</div>
+<div class="body">
+    <form method="POST" name="loan" th:object="${loan}" action="/presentation/loans/create">
+        <div class="form">
+            <div class="section">
+                Datos del Cliente
+            </div>
+            <div>
+                <div class="label">Id</div>
+                <div class="field">
+                    <input type="text" th:field="*{id}">
+                </div>
+            </div>
+            <div>
+                <div class="label">Nombre</div>
+                <div class="field">
+                    <input type="text" th:field="*{name}">
+                </div>
+            </div>
+            <div>
+                <div class="label">Tipo</div>
+                <div class="field">
+                    <select th:field="*{type}">
+                        <option value="1" selected>
+                            Personal
+                        </option>
+                        <option value="2">Vehiculo</option>
+                        <option value="3">Hipoteca</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="label">Monto</div>
+                <div class="field">
+                    <input type="text" th:field="*{amount}">
+                </div>
+            </div>
+            <div>
+                <div class="label">Duracion</div>
+                <div class="field">
+                    <input type="text" th:field="*{duration}">
+                </div>
+            </div>
+            <div>
+                <div class="label">Tasa de interes</div>
+                <div class="field">
+                    <input type="text" th:field="*{interest}">
+                </div>
+            </div>
+            <div class="section">
+                <input type="submit" value="Crear" name="crear">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="footer">
+    <h1>Gracias por su preferencia...</h1>
+</div>
+</body>
+</html>
